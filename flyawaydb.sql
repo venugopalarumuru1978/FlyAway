@@ -1,0 +1,61 @@
+use Flyaway;
+CREATE TABLE `f_admin` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `admin_id` varchar(20) DEFAULT NULL,
+  `admin_pwd` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+);
+
+INSERT INTO `f_admin` VALUES (1,'admin','admin@123');
+
+SELECT * FROM F_ADMIN;
+
+CREATE TABLE `f_airlines` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+);
+
+INSERT INTO `f_airlines` VALUES (2,'SpiceJet'),(3,'GoAir'),(4,'Air India'),(5,'AirAsia'),(8,'Vistara');
+select * from f_airlines;
+CREATE TABLE AIRPORTS(
+AP_CODE VARCHAR(10) PRIMARY KEY, 
+AP_NAME VARCHAR(50), 
+CITY  VARCHAR(20),
+COUNTRY VARCHAR(20)
+);
+
+select * from airports;
+
+CREATE TABLE FLIGHTS(
+SNO INT PRIMARY KEY auto_increment, 
+F_ID  VARCHAR(10),
+F_NAME VARCHAR(20),
+AIRLINE_CODE INT, 
+SOURCE VARCHAR(20), 
+DESTINATION VARCHAR(20), 
+TKT_PRICE FLOAT, 
+SEATS INT
+);
+
+select * from flights;
+
+CREATE TABLE CUSTOMER(CUS_ID INT PRIMARY KEY auto_increment, 
+CUS_NAME VARCHAR(30), 
+PHONE VARCHAR(15), 
+EMAIL VARCHAR(100), 
+PSWD  VARCHAR(20),
+LOCATION VARCHAR(20));
+
+SELECT * FROM  CUSTOMER;
+
+CREATE TABLE BOOKINGS(
+BK_ID INT PRIMARY KEY auto_increment,
+CID INT, 
+BK_DATE VARCHAR(20),
+BK_SOURCE  VARCHAR(20),
+BK_DEST VARCHAR(20),
+BK_AIR_Name VARCHAR(30), 
+BK_TKT_AMT FLOAT);
+
+select * from bookings;
